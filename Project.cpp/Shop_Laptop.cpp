@@ -404,7 +404,7 @@ int main(){
         cout << "\033[1;33m-" ;
     }
     cout << "\n" ;
-    gotoxy(40,2);
+    gotoxy(38,2);
     cout << "LOGIN\n";
     gotoxy(20,3);
     for(int i = 0 ; i < 42 ; i++){
