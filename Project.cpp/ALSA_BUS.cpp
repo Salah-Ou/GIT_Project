@@ -35,7 +35,7 @@ class ALSA {
             string province , city , adress ;
             string email ;
             string agency , date ;
-            string time = {"07:00 am - 20:00 pm"};
+            string time = {"07:00 am - 16:00 pm"};
         };
         vector <Student> students ;
         struct Shop {
@@ -56,7 +56,7 @@ void ALSA::about_us(){
     string current_time = Time();
     cout << "\033[1;37m Current Time's : \033[1;36m" << current_time << "\033[1;37m" ;  
     gotoxy(40,3);
-    cout << "\033[1;37m** \033[1;7;34m OUR MISSION \033[0m" ;
+    cout << "\033[1;34m** \033[1;7;34m OUR MISSION \033[0m" ;
     gotoxy(40,5);
     cout << "\033[1;37m   Our mission at \033[1;34mALSA City Agadir\033[0m\033[1;37m is to transport our customers safely" ;
     gotoxy(40,7);
@@ -75,7 +75,7 @@ void ALSA::about_us(){
     cout << "of 50,000 km every day.\033[0m" ;
     
     gotoxy(40,24);
-    cout << "\033[1;37m** \033[1;7;34m OUR SERVICES \033[0m" ;
+    cout << "\033[1;34m** \033[1;7;34m OUR SERVICES \033[0m" ;
     gotoxy(40,26);
     cout << "\033[1;37m   Regarding our services, we offer a wide network that extends over \033[1;32m60 " ;
     gotoxy(40,28);
@@ -90,7 +90,7 @@ void ALSA::about_us(){
     cout << "to children under 6 years old." ;
    
     gotoxy(40,40);
-    cout << "\033[1;37m** \033[1;7;34m OUR ENVIRONMENT \033[0m" ;
+    cout << "\033[1;34m** \033[1;7;34m OUR ENVIRONMENT \033[0m" ;
     gotoxy(40,42);
     cout << "\033[1;37m   As pollution has an impact on our daily lives, and transport contr- " ;
     gotoxy(40,44);
@@ -105,8 +105,10 @@ void ALSA::about_us(){
     cout << "driving is also implemented. At \033[1;34mALSA\033[0m\033[1;37m, we are committed to sustainable" ;
     gotoxy(40,54);
     cout << "development." ;
-    gotoxy(40,57);
+    gotoxy(57,57);
+    cout << "\033[1;34m" ;
     system("pause");
+    cout << "\033[0m" ;
     return ;
 }
 
@@ -119,7 +121,7 @@ void ALSA::student_card(){
     gotoxy(18,1);
     cout << "\033[1;7;34m Card Request\033[0m\033[1;37m" ;
     gotoxy(18,3);
-    cout << "Fields With \033[1;31m(*)\033[1;37m are required " ;
+    cout << "\033[1;32mFields With \033[1;31m(*)\033[1;32m are required \033[1;37m" ;
     gotoxy(18,5);
     cout << "\033[1;37mSchool Level : Primaire / College / Lycee / University / OFPPT " ;
     gotoxy(18,7);
@@ -135,22 +137,22 @@ void ALSA::student_card(){
         cout << "\033[1;31m(*) \033[1;34mAnother Establishment : " ;
         cin >> new_student.etablish ;
     }
-    gotoxy(18,15);
+    gotoxy(18,13);
     cout << "\033[1;31m(*) \033[1;37m Name : " ;
     cin >> new_student.name ;
-    gotoxy(18,17);
+    gotoxy(18,15);
     cout << "\033[1;31m(*) \033[1;37m Surnames : " ;
     cin >> new_student.surnames ;
-    gotoxy(18,19);
+    gotoxy(18,17);
     cout << "\033[1;31m(*) \033[1;37m Phone number : " ;
     cin >> new_student.phone_no ;
-    gotoxy(18,21);
-    cout << "\033[1;31m(*) \033[1;37mEmail : " ;
+    gotoxy(18,19);
+    cout << "\033[1;31m(*) \033[1;37m Email : " ;
     cin >> new_student.email ;
-    gotoxy(18,23);
+    gotoxy(18,21);
     cout << "\033[1;31m(*) \033[1;37m Date of Birth : " ;
     cin >> new_student.dt_of_birth ;
-    gotoxy(18,25);
+    gotoxy(18,23);
     cout << "\033[1;31m(*) \033[1;37m CNI : " ;
     char ch ;
     new_student.CNI.clear();
@@ -160,46 +162,31 @@ void ALSA::student_card(){
         new_student.CNI += ch ;
         cout << "*" ;
     }
-    gotoxy(18,27);
-    cout << "\033[1;31m(*) \033[1;37m Gender (Male / Femele) : " ;
-    cin >> new_student.gender ;
-    gotoxy(18,29);
-    cout << "\033[1;31m(*) \033[1;37m Province : " ;
-    cin >> new_student.province ;
-    gotoxy(18,31);
-    cout << "\033[1;31m(*) \033[1;37m City : " ;
-    cin >> new_student.city ;
-    gotoxy(18,33);
-    cout << "\033[1;31m(*) \033[1;37m Adress : " ;
-    cin.ignore();
-    getline(cin, new_student.adress);
-    gotoxy(18,37);
+    gotoxy(18,25);
     cout << "\033[1;7;34m To Ask For A Date \033[0m\033[1;37m" ;
-    gotoxy(18,39);
-    cout << "Fields With \033[1;31m(*)\033[1;37m are required" ;
-    gotoxy(18,41);
+    gotoxy(18,27);
+    cout << "\033[1;32mFields With \033[1;31m(*)\033[1;32m are required\033[1;37m" ;
+    gotoxy(18,29);
     cout << "WILAYA VALLEE / PLACE SALAM D\'AGADIR / PLACE MASSIRA D\'INZGANE" ;
-    gotoxy(18,43);
-    cout << "\033[1;31m(*) \033[1;37m Agency : " ;
+    gotoxy(18,31);
+    cout << "   \033[1;31m(*) \033[1;34mAgency : " ;
     cin.ignore();
     getline(cin,new_student.date);
-    gotoxy(18,45);
-    cout << "\033[1;31m(*) \033[1;37m Date : " ;
+    gotoxy(18,33);
+    cout << "\033[1;31m(*) \033[1;37m ( If you can go today, write today ) \033[1;34mOR\033[0m\033[1;37m Select Date : " ;
     cin >> new_student.date ;
-    if (new_student.date == "today"){
-        gotoxy(18,47);
+    if (new_student.date == "today" || new_student.date == "TODAY"){
+        gotoxy(18,35);
         string current_time = Time();
         cout << "\033[1;31m(*) \033[1;37m Current Time's : \033[1;30m" << current_time << "\033[1;37m" ;    
-        gotoxy(18,49);
-        cout << "\033[1;31m(*) \033[1;37m Schedule : \033[1;30m" << new_student.time << "\033[1;37m" ;
-    }
-    else{
-        gotoxy(18,47);
+        gotoxy(18,37);
         cout << "\033[1;31m(*) \033[1;37m Schedule : \033[1;30m" << new_student.time << "\033[1;37m" ;
     }
     students.push_back(new_student);
-    gotoxy(20,52);
+    gotoxy(25,40);
+    cout << "\033[1;34m" ;
     system("pause");
+    cout << "\033[0m" ;
 }
 
 void ALSA::shop_card(){
@@ -219,7 +206,7 @@ void ALSA::shop_card(){
         gotoxy(18,1);
         cout << "\033[1;7;34m Shopping Card\033[0m\033[1;37m" ;
         gotoxy(18,3);
-        cout << "\033[1;37mFields With \033[1;31m(*)\033[1;37m are required " ;
+        cout << "\033[1;32mFields With \033[1;31m(*)\033[1;32m are required \033[1;37m" ;
         string name , cni ;
         Shop new_shop ;
         gotoxy(18,5);
@@ -264,7 +251,9 @@ void ALSA::shop_card(){
                 gotoxy(23,24);
                 cout << "Thank You For Shopping With Us.\033[1;37m" ;
                 gotoxy(22,26);
+                cout << "\033[1;34m" ;
                 system("pause");
+                cout << "\033[0m" ;
                 break ;
             }
             else if (i == students.size() - 1){
@@ -287,7 +276,7 @@ void ALSA::receipt_card(){
         gotoxy(18,1);
         cout << "\033[1;7;34m Receipt Card\033[0m\033[1;37m" ;
         gotoxy(18,3);
-        cout << "\033[1;37mFields With \033[1;31m(*)\033[1;37m are required " ;
+        cout << "\033[1;32mFields With \033[1;31m(*)\033[1;32m are required \033[1;37m" ;
         gotoxy(18,5);
         cout << "\033[1;31m(*) \033[1;37mPlease Enter your name : \033[1;34m" ;
         cin.ignore();
@@ -313,6 +302,9 @@ void ALSA::receipt_card(){
                     Sleep(1000);
                 }
                 system("cls");
+                gotoxy(50,0);
+                string current_time = Time();
+                cout << "\033[1;37m Current Time's : \033[1;36m" << current_time << "\033[1;37m" ;  
                 gotoxy(21,3);
                 cout << "\033[1;7;34m A . L . S . A \033[0m" ;
                 gotoxy(18,4);
@@ -320,43 +312,45 @@ void ALSA::receipt_card(){
                 gotoxy(18,6);
                 char numbers[] = "123456789" ;
                 char random_number[5] ;
-                cout << "\033[1;34mPayment Number  : \033[0m\033[1;37mAA" ;
+                cout << "\033[1;34mPayment Number  :    \033[0m\033[1;37mAA" ;
                 for(int i = 0 ; i < 5 ; i++){
                     random_number[i] = numbers[rand() % 10] ;
                     cout << random_number[i] ;
                 }
                 gotoxy(18,8);
-                cout << "\033[1;34mPayment Number  : \033[0m\033[1;37mAA" ;
+                cout << "\033[1;34mPayment Number  :    \033[0m\033[1;37mAA" ;
                 for(int i = 0 ; i < 5 ; i++){
                     random_number[i] = numbers[rand() % 10] ;
                     cout << random_number[i] ;
                 }
                 for(int j = 0 ; j < shops.size() ; j++){
                     gotoxy(18,10);
-                    cout << "\033[1;34mCard Type       : \033[0m\033[1;37mNormal" ;
+                    cout << "\033[1;34mCard Type       :    \033[0m\033[1;37mNormal" ;
                     gotoxy(18,12);
-                    cout << "\033[1;34mRecharge        : \033[0m\033[1;37mE-Recharge Month" ;
+                    cout << "\033[1;34mRecharge        :    \033[0m\033[1;37mE-Recharge Month" ;
                     gotoxy(18,14);
-                    cout << "\033[1;34mCard Start Date : \033[0m\033[1;37m" << shops[i].card_start_date << "  00:00:00 " ;
+                    cout << "\033[1;34mCard Start Date :    \033[0m\033[1;32m" << shops[i].card_start_date << "   00:00:00 \033[0m" ;
                     gotoxy(18,16);
-                    cout << "\033[1;34mCard End Date   : \033[0m\033[1;37m" << shops[i].card_end_date << "  23:59:59 " ;
+                    cout << "\033[1;34mCard End Date   :    \033[0m\033[1;31m" << shops[i].card_end_date << "   23:59:59 \033[0m" ;
                     gotoxy(18,19);
-                    cout << fixed << "\033[1;34mCard Price      : \033[0m\033[1;37m" << setprecision(2) << shops[i].card_price << " DH" ;
+                    cout << fixed << "\033[1;34mCard Price      :    \033[0m\033[1;37m" << setprecision(2) << shops[i].card_price << " DH" ;
                     gotoxy(18,21);
-                    cout << fixed << "\033[1;34mRecharge Price  : \033[0m\033[1;37m" << setprecision(2) << shops[i].recharge_price << " DH" ;
+                    cout << fixed << "\033[1;34mRecharge Price  :    \033[0m\033[1;37m" << setprecision(2) << shops[i].recharge_price << " DH" ;
                     gotoxy(18,23);
-                    cout << fixed << "\033[1;34mTotal Price     : \033[0m\033[1;37m" << setprecision(2) << shops[i].total << " DH" ;
+                    cout << fixed << "\033[1;34mTotal Price     :    \033[0m\033[1;37m" << setprecision(2) << shops[i].total << " DH" ;
                     gotoxy(23,26);
                     cout << "\033[1;32mThank You For Shopping With Us.\033[1;37m" ;
                     time_t now = time(0);
                     tm *tm = localtime(&now);
                     gotoxy(27,30);
                     cout << "\033[1;7;34m " ;
-                    cout << tm -> tm_mday << "/" << ((tm -> tm_mon) < 10 ? "0" : "") << tm -> tm_mon + 1 << "/" << tm -> tm_year + 1900
-                    << "  " << tm -> tm_hour << ":" << ((tm -> tm_min) < 10 ? "0" : "") << tm -> tm_min << ":" << ((tm -> tm_sec) < 10 ? "0" : "")
+                    cout << ((tm -> tm_mday < 10) ? "0" : "") << tm -> tm_mday << "/" << ((tm -> tm_mon < 10) ? "" : "0") << tm -> tm_mon + 1 << "/" << tm -> tm_year + 1900
+                    << "  " << tm -> tm_hour << ":" << ((tm -> tm_min < 10) ? "0" : "") << tm -> tm_min << ":" << ((tm -> tm_sec < 10) ? "0" : "")
                     << tm -> tm_sec << " \033[0m\033[1;37m" ;
                     gotoxy(22,33);
+                    cout << "\033[1;34m" ;
                     system("pause");
+                    cout << "\033[0m" ;
                 }
             }
             else{
