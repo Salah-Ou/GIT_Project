@@ -302,15 +302,14 @@ class Laptop {
                 for(int i = 0 ; i < orders.size() ; i++){
                     if (orders[i].laptopID == laptopId){
                         cout << "\033[0m" ;
-                        gotoxy(44,32);
+                        gotoxy(58,44);
                         cout << "\033[1;32mOrder Placed Successfully!!!\033[0m\n";       
                         cout << "\033[0m" ;
-                        gotoxy(45,34);
+                        gotoxy(55,46);
                         system("pause");
-                        gotoxy(55,50);
                         for(int i = 5 ; i >= 0 ; i--){
                             cout << "\r" ;
-                            gotoxy(55,36);
+                            gotoxy(55,46);
                             Beep(300,500);
                             cout << "\033[1;32mPLease Wait ... Loading \033[1;31m" << i << "\033[1;32m seconds.\033[0m" ;
                             Sleep(1000);
